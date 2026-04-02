@@ -1,256 +1,72 @@
-<p>/* =========================================</p>
-<p>&nbsp; &nbsp;1. RESET Y VARIABLES **** (****** First)</p>
-<p>&nbsp; &nbsp;========================================= */</p>
-<p>*, *::before, *::after {</p>
-<p>&nbsp; &nbsp; box-sizing: border-box;</p>
-<p>&nbsp; &nbsp; margin: 0;</p>
-<p>&nbsp; &nbsp; padding: 0;</p>
-<p>}</p>
-<p><br></p>
-<p>body {</p>
-<p>&nbsp; &nbsp; font-family: &apos;Segoe UI&apos;, Roboto, Helvetica, Arial, sans-serif;</p>
-<p>&nbsp; &nbsp; background-color: #f4f7f6;</p>
-<p>&nbsp; &nbsp; color: #333333;</p>
-<p>&nbsp; &nbsp; line-height: 1.6;</p>
-<p>&nbsp; &nbsp; -webkit-font-smoothing: antialiased;</p>
-<p>}</p>
-<p><br></p>
-<p>.infographic-container {</p>
-<p>&nbsp; &nbsp; max-width: 100%;</p>
-<p>&nbsp; &nbsp; padding: 2rem 1.25rem;</p>
-<p>}</p>
-<p><br></p>
-<p>.header-info {</p>
-<p>&nbsp; &nbsp; text-align: center;</p>
-<p>&nbsp; &nbsp; margin-bottom: 2.5rem;</p>
-<p>}</p>
-<p><br></p>
-<p>.header-info h1 {</p>
-<p>&nbsp; &nbsp; font-size: 1.8rem;</p>
-<p>&nbsp; &nbsp; color: #2c3e50;</p>
-<p>&nbsp; &nbsp; margin-bottom: 0.5rem;</p>
-<p>}</p>
-<p><br></p>
-<p>.header-info p {</p>
-<p>&nbsp; &nbsp; font-size: 1rem;</p>
-<p>&nbsp; &nbsp; color: #546e7a;</p>
-<p>&nbsp; &nbsp; max-width: 500px;</p>
-<p>&nbsp; &nbsp; margin: 0 auto;</p>
-<p>}</p>
-<p><br></p>
-<p>/* =========================================</p>
-<p>&nbsp; &nbsp;2. ESTRUCTURA DE LA LISTA Y ***** VISUAL</p>
-<p>&nbsp; &nbsp;========================================= */</p>
-<p>.interactive-list {</p>
-<p>&nbsp; &nbsp; list-style: none;</p>
-<p>&nbsp; &nbsp; display: flex;</p>
-<p>&nbsp; &nbsp; flex-direction: column;</p>
-<p>&nbsp; &nbsp; gap: 1.5rem; /* Espaciado ******** **** ** legibilidad */</p>
-<p>}</p>
-<p><br></p>
-<p>.list-item {</p>
-<p>&nbsp; &nbsp; /* &Aacute;rea t&aacute;**** m&iacute;nima *********** (****** 48px+) superada con el ******* *** wrapper */</p>
-<p>}</p>
-<p><br></p>
-<p>.item-wrapper {</p>
-<p>&nbsp; &nbsp; display: flex;</p>
-<p>&nbsp; &nbsp; flex-direction: row;</p>
-<p>&nbsp; &nbsp; align-items: center;</p>
-<p>&nbsp; &nbsp; gap: 1.25rem;</p>
-<p>&nbsp; &nbsp; background-color: #ffffff;</p>
-<p>&nbsp; &nbsp; padding: 1.5rem;</p>
-<p>&nbsp; &nbsp; border-radius: 16px;</p>
-<p>&nbsp; &nbsp; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);</p>
-<p>&nbsp; &nbsp; /* Transici&oacute;n ****** para el ****** de elevaci&oacute;n ***** */</p>
-<p>&nbsp; &nbsp; transition: *** 0.4s ease-in-out;</p>
-<p>}</p>
-<p><br></p>
-<p>.text-container {</p>
-<p>&nbsp; &nbsp; flex: 1;</p>
-<p>}</p>
-<p><br></p>
-<p>.item-title {</p>
-<p>&nbsp; &nbsp; font-size: 1.15rem;</p>
-<p>&nbsp; &nbsp; font-weight: 700;</p>
-<p>&nbsp; &nbsp; color: #2c3e50;</p>
-<p>&nbsp; &nbsp; margin-bottom: 0.35rem;</p>
-<p>&nbsp; &nbsp; position: relative;</p>
-<p>&nbsp; &nbsp; display: inline-block;</p>
-<p>&nbsp; &nbsp; /* Transici&oacute;n para el resaltado de color del texto */</p>
-<p>&nbsp; &nbsp; transition: *** 0.4s ease-in-out;</p>
-<p>}</p>
-<p><br></p>
-<p>.item-desc {</p>
-<p>&nbsp; &nbsp; font-size: 0.95rem;</p>
-<p>&nbsp; &nbsp; color: #607d8b;</p>
-<p>&nbsp; &nbsp; line-height: 1.5;</p>
-<p>}</p>
-<p><br></p>
-<p>/* =========================================</p>
-<p>&nbsp; &nbsp;3. EFECTO #18: DESPLAZAMIENTO *** &Iacute;CONO</p>
-<p>&nbsp; &nbsp;Semic&iacute;rculo que rota para completar ** fondo</p>
-<p>&nbsp; &nbsp;========================================= */</p>
-<p>.icon-container {</p>
-<p>&nbsp; &nbsp; position: relative;</p>
-<p>&nbsp; &nbsp; width: 60px;</p>
-<p>&nbsp; &nbsp; height: 60px;</p>
-<p>&nbsp; &nbsp; flex-shrink: 0;</p>
-<p>&nbsp; &nbsp; border-radius: 50%;</p>
-<p>&nbsp; &nbsp; background-color: #e0e0e0; /* Color base del c&iacute;rculo incompleto */</p>
-<p>&nbsp; &nbsp; overflow: hidden;</p>
-<p>}</p>
-<p><br></p>
-<p>/* *************** **** los semic&iacute;****** */</p>
-<p>.icon-container::before,</p>
-<p>.icon-container::after {</p>
-<p>&nbsp; &nbsp; content: &apos;&apos;;</p>
-<p>&nbsp; &nbsp; position: absolute;</p>
-<p>&nbsp; &nbsp; width: 100%;</p>
-<p>&nbsp; &nbsp; height: 50%;</p>
-<p>&nbsp; &nbsp; left: 0;</p>
-<p>&nbsp; &nbsp; background-color: #ff6b00; /* Color vibrante del &iacute;**** */</p>
-<p>&nbsp; &nbsp; /*&nbsp;</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;DID&Aacute;CTICO: **** ******* la VELOCIDAD de la rotaci&oacute;n del semic&iacute;rculo,</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;modifica el valor de &quot;0.4s&quot; en la propiedad &quot;transition&quot; de aqu&iacute; abajo.</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;Un valor menor (ej. 0.2s) lo har&aacute; m&aacute;s r&aacute;pido; uno mayor (ej. 0.8s) ** har&aacute; m&aacute;s lento.</p>
-<p>&nbsp; &nbsp; */</p>
-<p>&nbsp; &nbsp; transition: all 0.4s ease-in-out;</p>
-<p>}</p>
-<p><br></p>
-<p>/* Semic&iacute;***** superior (siempre visible) */</p>
-<p>.icon-container::before {</p>
-<p>&nbsp; &nbsp; top: 0;</p>
-<p>&nbsp; &nbsp; border-radius: 999px 999** 0 0;</p>
-<p>}</p>
-<p><br></p>
-<p>/* Semic&iacute;rculo inferior (************ ****** 180 grados, ocult&aacute;***** hacia arriba) */</p>
-<p>.icon-container::after {</p>
-<p>&nbsp; &nbsp; bottom: 0;</p>
-<p>&nbsp; &nbsp; border-radius: 0 0 999px 999px;</p>
-<p>&nbsp; &nbsp; transform-origin: top center;</p>
-<p>&nbsp; &nbsp; transform: rotate(180deg);</p>
-<p>}</p>
-<p><br></p>
-<p>/* Estado Hover: El semic&iacute;rculo inferior rota a su posici&oacute;n ******** */</p>
-<p>.list-item:hover .icon-container::after {</p>
-<p>&nbsp; &nbsp; transform: rotate(0deg);</p>
-<p>}</p>
-<p><br></p>
-<p>/* N&uacute;mero sobre el &iacute;cono (siempre encima de los pseudoelementos) */</p>
-<p>.number {</p>
-<p>&nbsp; &nbsp; position: relative;</p>
-<p>&nbsp; &nbsp; z-index: 2;</p>
-<p>&nbsp; &nbsp; display: flex;</p>
-<p>&nbsp; &nbsp; align-items: center;</p>
-<p>&nbsp; &nbsp; justify-content: center;</p>
-<p>&nbsp; &nbsp; width: 100%;</p>
-<p>&nbsp; &nbsp; height: 100%;</p>
-<p>&nbsp; &nbsp; font-weight: 800;</p>
-<p>&nbsp; &nbsp; font-size: 1.4rem;</p>
-<p>&nbsp; &nbsp; color: #ffffff;</p>
-<p>&nbsp; &nbsp; /* Transici&oacute;n ***** para ****** aparece el ***** naranja */</p>
-<p>&nbsp; &nbsp; transition: all 0.4s ease-in-out;</p>
-<p>}</p>
-<p><br></p>
-<p><br></p>
-<p>/* =========================================</p>
-<p>&nbsp; &nbsp;4. EFECTO #24: L&Iacute;NEA DE MEN&Uacute; ONDULADA</p>
-<p>&nbsp; &nbsp;L&iacute;*** animada ******** SVG en Base64</p>
-<p>&nbsp; &nbsp;========================================= */</p>
-<p>.item-title::after {</p>
-<p>&nbsp; &nbsp; content: &apos;&apos;;</p>
-<p>&nbsp; &nbsp; position: absolute;</p>
-<p>&nbsp; &nbsp; bottom: -6px;</p>
-<p>&nbsp; &nbsp; left: 0;</p>
-<p>&nbsp; &nbsp; width: 0%; /* ************ oculta */</p>
-<p>&nbsp; &nbsp; height: 8px;</p>
-<p>&nbsp; &nbsp; /*&nbsp;</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;DID&Aacute;CTICO: Aqu&iacute; ** donde debes cambiar el SVG en base64 de ** l&iacute;nea ondulada.</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;*********** es una onda naranja (#FF6B00). Puedes ******* tu propio SVG,</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;pasarlo por un codificador Base64 y reemplazar el texto ***** comillas.</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;Aseg&uacute;**** de que ** &apos;background-size&apos; coincida con el ***** (viewBox) ** ** nuevo SVG.</p>
-<p>&nbsp; &nbsp; */</p>
-<p>&nbsp; &nbsp; background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxwYXRoIGQ9Ik0wIDVxNTAtNSAxMDAgMHQxMDAgMCIgc3Ryb2tlPSIjRkY2NjAwIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48L3N2Zz4=&quot;);</p>
-<p>&nbsp; &nbsp; background-size: 200px 8px; /* Tama&ntilde;o *** patr&oacute;n de la onda */</p>
-<p>&nbsp; &nbsp; background-repeat: repeat-x;</p>
-<p>&nbsp; &nbsp; background-position: 0 100%;</p>
-<p>&nbsp; &nbsp; /* ** transici&oacute;n del ancho crea ** efecto ** &quot;revelado&quot; de ** l&iacute;nea */</p>
-<p>&nbsp; &nbsp; transition: width 0.4s ease-in-out;</p>
-<p>}</p>
-<p><br></p>
-<p>/* Animaci&oacute;n para mover ** onda *************** ** ***** ******** */</p>
-<p>@keyframes wave-move {</p>
-<p>&nbsp; &nbsp; 0% { background-position: 0 100%; }</p>
-<p>&nbsp; &nbsp; 100% { background-position: 200px 100%; }</p>
-<p>}</p>
-<p><br></p>
-<p>/* ****** Hover: ****** la onda y activa la animaci&oacute;n */</p>
-<p>.list-item:hover .item-title::after {</p>
-<p>&nbsp; &nbsp; width: 100%;</p>
-<p>&nbsp; &nbsp; animation: wave-**** 1s linear infinite;</p>
-<p>}</p>
-<p><br></p>
-<p><br></p>
-<p>/* =========================================</p>
-<p>&nbsp; &nbsp;5. ESTILIZACI&Oacute;N DE HOVER GENERAL</p>
-<p>&nbsp; &nbsp;========================================= */</p>
-<p>.list-item:hover .item-wrapper {</p>
-<p>&nbsp; &nbsp; transform: translateX(6px);</p>
-<p>&nbsp; &nbsp; box-shadow: 0 8** 25px rgba(255, 107, 0, 0.15);</p>
-<p>}</p>
-<p><br></p>
-<p>.list-item:hover .item-title {</p>
-<p>&nbsp; &nbsp; color: #ff6b00; /* Resaltado animado del texto */</p>
-<p>}</p>
-<p><br></p>
-<p>.list-item:hover .icon-container {</p>
-<p>&nbsp; &nbsp; background-color: transparent; /* Limpia el gris base **** que solo ** *** el naranja */</p>
-<p>}</p>
-<p><br></p>
-<p><br></p>
-<p>/* =========================================</p>
-<p>&nbsp; &nbsp;6. RESPONSIVE DESIGN (Tablets y Desktop)</p>
-<p>&nbsp; &nbsp;========================================= */</p>
-<p>@media (min-width: 768px) {</p>
-<p>&nbsp; &nbsp; .infographic-container {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; max-width: 800px;</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; margin: 0 auto;</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; padding: 4*** 2rem;</p>
-<p>&nbsp; &nbsp; }</p>
-<p><br></p>
-<p>&nbsp; &nbsp; .header-info h1 {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; font-size: 2.5rem;</p>
-<p>&nbsp; &nbsp; }</p>
-<p><br></p>
-<p>&nbsp; &nbsp; .header-info p {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.15rem;</p>
-<p>&nbsp; &nbsp; }</p>
-<p><br></p>
-<p>&nbsp; &nbsp; .interactive-list {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; gap: 2rem; /* Ritmo ****** m&aacute;s amplio en pantallas grandes */</p>
-<p>&nbsp; &nbsp; }</p>
-<p><br></p>
-<p>&nbsp; &nbsp; .item-wrapper {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; padding: 2rem;</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; gap: 2rem;</p>
-<p>&nbsp; &nbsp; }</p>
-<p><br></p>
-<p>&nbsp; &nbsp; /* Agrandamos *** iconos en desktop */</p>
-<p>&nbsp; &nbsp; .icon-container {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; width: 75px;</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; height: 75px;</p>
-<p>&nbsp; &nbsp; }</p>
-<p><br></p>
-<p>&nbsp; &nbsp; .number {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.75rem;</p>
-<p>&nbsp; &nbsp; }</p>
-<p><br></p>
-<p>&nbsp; &nbsp; .item-title {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.35rem;</p>
-<p>&nbsp; &nbsp; }</p>
-<p><br></p>
-<p>&nbsp; &nbsp; .item-desc {</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.05rem;</p>
-<p>&nbsp; &nbsp; }</p>
-<p>}</p>
-<div style="color: red">Prueba de Word a HTML - por favor <a href="https://wordtohtml.net/site/payment">Go PRO</a> para obtener el HTML completo.</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Interactiva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f6;
+      padding: 20px;
+    }
+
+    .interactive-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .item-wrapper {
+      display: flex;
+      gap: 15px;
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .item-wrapper:hover {
+      transform: translateX(5px);
+    }
+
+    .icon-container {
+      width: 50px;
+      height: 50px;
+      background: orange;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista Interactiva</h1>
+
+  <ul class="interactive-list">
+    <li class="list-item">
+      <div class="item-wrapper">
+        <div class="icon-container">1</div>
+        <div>
+          <h3 class="item-title">Elemento 1</h3>
+          <p class="item-desc">Descripción del elemento.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-item">
+      <div class="item-wrapper">
+        <div class="icon-container">2</div>
+        <div>
+          <h3 class="item-title">Elemento 2</h3>
+          <p class="item-desc">Otra descripción.</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</body>
+</html>
